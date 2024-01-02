@@ -1,0 +1,30 @@
+pasos crear servidor web con express:
+carpeta vacia
+1)npm init -y 
+2)npm i nodemon 
+3)npm i express
+4)mkdir src // crea el directorio src
+5) crear adentro carpeta app.js
+6) en la carpeta json agrego    "type": "module", abajo de start (poner comas)
+7)despues agrego abajo de "test",  "start": "nodemon src/app.js",
+8)probamos q funcione con console.log en app.js
+9)npm start
+
+En el archivo JS borramos la prueba y escribimos:
+import express from "express";
+const app = express();
+const PORT = 8080;
+app.get("/", (req, res)=> {
+    res.send("Hola mundo, nuestra primera api con express");
+});
+app.listen(PORT, () => {
+    console.log (`Servidor escuchando en http://localhost:${PORT}`);
+});
+
+
+
+10) control C detener el servidor y volverlo a inicial con npm start
+11) creo una nueva ruta en el archivo JS app.get("/saludo", (req, res)=>{
+    res.send("hola mundo este es un saludo")
+});  // colocarlo a continuacion del llamado de rutas, es un ejemplo para crear una ruta diferente
+
